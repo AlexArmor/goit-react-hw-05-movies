@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { getMovieByQuery } from 'service/apiMovie';
+import { getMovieByQuery } from 'service/api';
 import { MovieList } from 'components/MovieList/MovieList';
 
-export const SearchMovies = () => {
+export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
