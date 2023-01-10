@@ -25,7 +25,11 @@ export const MovieDetails = () => {
       />
       <div>
         <h2>{movie.title}</h2>
-        <p></p>
+        <p>vote average: {movie.vote_average}</p>
+        <h3>Overview</h3>
+        <p>{movie.overview}</p>
+        <h3>Genres</h3>
+        <p>{movie.genres.map(({ name }) => name).join(' ')}</p>
       </div>
     </>
   );
