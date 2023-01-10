@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getMovieById } from 'service/api';
 
 export const MovieDetails = () => {
@@ -31,6 +31,14 @@ export const MovieDetails = () => {
         <h3>Genres</h3>
         <p>{movie.genres.map(({ name }) => name).join(' ')}</p>
       </div>
+      <ul>
+        <li>
+          <Link to="credits">Cast</Link>
+        </li>
+        <li>
+          <Link to="reviews">Reviews</Link>
+        </li>
+      </ul>
     </>
   );
 };
