@@ -9,7 +9,6 @@ export const MovieDetails = () => {
 
   useEffect(() => {
     getMovieById(idMovie).then(data => {
-      console.log(data);
       setMovie(data);
     });
   }, [idMovie]);

@@ -1,7 +1,31 @@
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { getMovieReviews } from 'service/api';
 
 export const Reviews = () => {
   const { idMovie } = useParams();
 
-  return <div>Reviews</div>;
+  const [review, setReview] = useState(null);
+
+  useEffect(() => {
+    getMovieReviews(idMovie).then(data => {
+      setReview(data);
+    });
+  }, [idMovie]);
+
+  if (!review) {
+    return;
+  }
+  const { results } = review;
+
+  return (
+    <ul>
+      {results.map(({ author, content, id }) => (
+        <li key={id}>{
+          <h3>Author: {author}</h3>
+          <p>{content}</p>}
+        </li>
+      ))}
+    </ul>
+  );
 };
