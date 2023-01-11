@@ -18,12 +18,16 @@ export const Reviews = () => {
   }
   const { results } = review;
 
+  if (results.length === 0) {
+    return <h3>No reviews</h3>;
+  }
+
   return (
     <ul>
       {results.map(({ author, content, id }) => (
-        <li key={id}>{
+        <li key={id}>
           <h3>Author: {author}</h3>
-          <p>{content}</p>}
+          <p>{content}</p>
         </li>
       ))}
     </ul>
