@@ -1,6 +1,8 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { getMovieById } from 'service/api';
+import css from './MovieDetails.module.css';
+import { Loader } from '../../components/Loader/Loader';
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -35,17 +37,20 @@ const MovieDetails = () => {
         <h3>Genres</h3>
         <p>{movie.genres.map(({ name }) => name).join(' ')}</p>
       </div>
-      <ul>
-        <li>
-          <Link to="credits">Cast</Link>
-        </li>
-        <li>
-          <Link to="reviews">Reviews</Link>
-        </li>
-      </ul>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Outlet />
-      </Suspense>
+      <div className={css.addionalInfo}>
+        <h3>Additional information</h3>
+        <ul>
+          <li>
+            <Link to="credits">Cast</Link>
+          </li>
+          <li>
+            <Link to="reviews">Reviews</Link>
+          </li>
+        </ul>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </div>
     </>
   );
 };

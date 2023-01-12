@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
+import { Loader } from '../Loader/Loader';
 import css from './AppBar.module.css';
 
 export const AppBar = () => {
@@ -15,9 +16,11 @@ export const AppBar = () => {
           </li>
         </ul>
       </nav>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Outlet />
-      </Suspense>
+      <div className={css.addionalInfo}>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </div>
     </>
   );
 };

@@ -1,5 +1,5 @@
-import { useEffect, useState, Suspense } from 'react';
-import { useSearchParams, Outlet } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { getMovieByQuery } from 'service/api';
 import { MovieList } from 'components/MovieList/MovieList';
 
@@ -37,9 +37,6 @@ const Movies = () => {
         <button type="submit">Search</button>
       </form>
       <MovieList movies={movies} />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Outlet />
-      </Suspense>
     </>
   );
 };
