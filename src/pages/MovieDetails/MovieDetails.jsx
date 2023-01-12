@@ -2,7 +2,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { getMovieById } from 'service/api';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const location = useLocation();
   const { idMovie } = useParams();
 
@@ -20,7 +20,11 @@ export const MovieDetails = () => {
     <>
       <Link to={location.state?.from ?? '/'}>Go back</Link>
       <img
-        src={'https://image.tmdb.org/t/p/w500' + movie.backdrop_path}
+        src={
+          movie.backdrop_path
+            ? 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path
+            : 'https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg'
+        }
         alt={movie.title}
       />
       <div>
@@ -45,3 +49,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;
