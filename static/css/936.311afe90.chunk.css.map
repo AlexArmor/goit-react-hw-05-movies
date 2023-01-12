@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/936.311afe90.chunk.css","mappings":"AAAA,kDACE,kBACF,CAEA,2BACE,iBACF","sources":["pages/Home/Home.module.css"],"sourcesContent":[".title {\n  margin-bottom: 10px;\n}\n\n.trendingBlock {\n  padding-left: 30px;\n}\n"],"names":[],"sourceRoot":""}
