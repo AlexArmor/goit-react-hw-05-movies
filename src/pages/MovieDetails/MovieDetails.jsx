@@ -1,8 +1,9 @@
 import { useState, useEffect, Suspense } from 'react';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { getMovieById } from 'service/api';
 
 export const MovieDetails = () => {
+  const location = useLocation();
   const { idMovie } = useParams();
 
   const [movie, setMovie] = useState(null);
@@ -17,6 +18,7 @@ export const MovieDetails = () => {
   }
   return (
     <>
+      <Link to={location.state?.from ?? '/'}>Go back</Link>
       <img
         src={'https://image.tmdb.org/t/p/w500' + movie.backdrop_path}
         alt={movie.title}
