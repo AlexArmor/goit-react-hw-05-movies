@@ -17,7 +17,6 @@ const Cast = () => {
     return;
   }
   const { cast } = castIng;
-  console.log(cast);
   return (
     <ul>
       {cast.map(({ name, character, profile_path, id }) => (
