@@ -1,10 +1,11 @@
 import { Outlet, NavLink } from 'react-router-dom';
+import css from './AppBar.module.css';
 
 export const AppBar = () => {
   return (
     <>
-      <nav>
-        <ul>
+      <nav className={css.navBar}>
+        <ul className={css.navList}>
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
