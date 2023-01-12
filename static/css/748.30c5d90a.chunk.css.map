@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/748.30c5d90a.chunk.css","mappings":"AAAA,8BAEE,cAAe,CADf,YAEF","sources":["pages/PageNotFound404/PageNotFound404.module.css"],"sourcesContent":[".error {\n  padding: 20px;\n  font-size: 30px;\n}\n"],"names":[],"sourceRoot":""}
