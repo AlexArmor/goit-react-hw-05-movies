@@ -1,5 +1,7 @@
 .navBar {
   border-bottom: 2px solid green;
+  box-shadow: 0 5px 5px -5px rgba(9, 110, 0, 0.9);
+  margin-bottom: 20px;
   padding: 20px 30px;
 }
 
@@ -10,4 +12,11 @@
 
 .addionalInfo {
   position: relative;
+}
+
+.NavLink {
+  color: black;
+}
+.NavLink.active {
+  color: red;
 }

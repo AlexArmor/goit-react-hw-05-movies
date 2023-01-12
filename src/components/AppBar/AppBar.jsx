@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import { Loader } from '../Loader/Loader';
+import cn from 'classnames';
 import css from './AppBar.module.css';
 
 export const AppBar = () => {
@@ -9,10 +10,24 @@ export const AppBar = () => {
       <nav className={css.navBar}>
         <ul className={css.navList}>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                cn(css.NavLink, { [css.active]: isActive })
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/movies">Movies</NavLink>
+            <NavLink
+              to="/movies"
+              className={({ isActive }) =>
+                cn(css.NavLink, { [css.active]: isActive })
+              }
+            >
+              Movies
+            </NavLink>
           </li>
         </ul>
       </nav>

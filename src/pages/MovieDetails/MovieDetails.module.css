@@ -1,3 +1,41 @@
+.sectionMovieDetails {
+  padding: 20px;
+}
+
+.imagePoster {
+  width: 400px;
+}
+
+.filmInfo {
+  display: flex;
+  gap: 10px;
+}
+
 .addionalInfo {
   position: relative;
+  border-top: 2px solid green;
+  box-shadow: 0 -5px 5px -5px rgba(9, 110, 0, 0.9);
+  padding-top: 10px;
+}
+
+.linkBack {
+  width: 70px;
+  padding: 5px;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.listItem {
+  margin-bottom: 20px;
+}
+
+.listInfo {
+  border-bottom: 2px solid green;
+  box-shadow: 0 5px 5px -5px rgba(9, 110, 0, 0.9);
+  padding: 10px 30px;
 }
